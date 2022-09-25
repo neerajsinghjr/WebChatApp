@@ -39,4 +39,4 @@ webRoutes = [
 staticRoutes = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # URL Init;
-urlpatterns = adminRoutes + webRoutes + apiRoutes + staticRoutes # + mediaRoutes
+urlpatterns = adminRoutes + webRoutes + apiRoutes + staticRoutes

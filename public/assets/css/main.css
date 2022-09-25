@@ -1,10 +1,16 @@
 /* Global Variables accessed using var() */
 :root {
-    --main-background-color: #f2f2f2;
+    --main-background-color: #E7E9EB;
     --dark-background-color: #a2a2a2;
     --secondary-text-color: #808080;
     --light-primary-text-color: #0080ff;
     --main-font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    background-color: var(--main-background-color)
 }
 
 .main {
@@ -12,10 +18,9 @@
     font-weight: 400;
     min-height: 100vh;
     width: 100%;
+    background-color: var(--main-background-color);
 }
 
-.body {
-    font-family: var(--main-font-family);
-    font-weight: 400;
-    background-color: var(--main-background-color)
+.footer {
+    min-height: 100px;
 }

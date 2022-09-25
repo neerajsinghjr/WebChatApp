@@ -1,3 +1,109 @@
-<div class="header">
-    Header here...
+{% load static %}
+
+<div class="header d-flex p-2 px-md-2 bg-white shadow-sm border-bottom">
+    <!-- MEDIUM SCALE DEVICES -->
+    <div class="d-none d-md-flex flex-row flex-grow-1 align-items-center my-auto">
+        <!-- col 1 -->
+        <h2 class="display-6 m-2 font-weight-normal justify-content-start">
+            <a class="p-2 text-dark text-decoration-none" href="{% url 'home.index' %}">DjWebChatApp</a>
+        </h2>
+        <!-- col 2 -->
+        <h5 class="display-6 m-2 font-weight-normal justify-content-start">
+            <a class="p-2 text-dark text-decoration-none" href="{% url 'home.index' %}">Home</a>
+        </h5>
+        <!-- col 3 -->
+        <h5 class="display-6 m-2 font-weight-normal justify-content-start">
+            <a class="p-2 text-dark text-decoration-none" href="{% url 'home.about' %}">About</a>
+        </h5>
+        <!-- col 4 -->
+        <form action="" class="search-bar justify-content-start">
+            {% csrf_token %}
+            <input type="text" class"border-0 form-control p-2" name="query" id="headerSearchForm" placeholder="Search here..."/>
+        </form>
+       
+        <!-- col 5 -->
+        <div class="d-flex flex-row-reverse flex-grow-1">
+            <nav>
+                {% if request.user.is_authenticated %}
+                <div class="dropdown dropleft show p-2">
+                    <div class="d-flex flex-row">
+                        <!-- col 6 | chat notifications -->
+                        <div class="btn-group dropleft mx-2 px-2">
+                            <div class="d-flex chat-notification rounded-circle" id="chatNotificationToggle" data-toggle="dropdown">
+                                <span id="chatNotificatonCount" class="notification-badge"></span>
+                                <span class="d-flex material-symbols-outlined m-auto">chat</span>
+                                <div class="dropdown-menu scrollable-menu" aria-labelledby="chatNotificationToggle" id="chatNotificationContainer">
+                                    {% comment %} chat notification content here ... {% endcomment %}
+                                </div>   
+                            </div>
+                        </div>
+                                
+                        <!-- col 7 | app-notification -->
+                        <div class="btn-group dropleft mx-2 px-2">
+                            <div class="d-flex app-notification rounded-circle" id="appNotificationToggle" data-toggle="dropdown">
+                                <span id="appNotificationCount" class="notification-badge"></span>
+                                <span class="d-flex material-symbols-outlined m-auto">notifications_active</span>
+                                <div class="dropdown-menu scrollable-menu" aria-labelledby="appNotificationToggle" id="appNotificationContainer">
+                                    {% comment %} chat notification content here ... {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- col 8 | account-notification -->
+                        <div class="btn-group dropleft mx-2 px-2">
+                            <img class="m-3 bg-mute account-logo rounded-circle m-auto d-block dropdown-toggle" src="{% static 'media/avatar/avatar.png' %}" id="profileImage" 
+                            data-toggle="dropdown" aria-haspopup=true aria-expanded=false alt="Profile Images" width="35px" height="35px"/>
+                            <div class="dropdown-menu scrollable-menu" aria-labelledby="profileImage">
+                                <a href="#" class="dropdown-item text-decoration-none">Accounts</a>
+                                <a href="#" class="dropdown-item text-decoration-none">Friends</a>  
+                                <a href="#" class="dropdown-item text-decoration-none">Settings</a>
+                                <a href="#" class="dropdown-item text-decoration-none">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                {% else %}
+                    <!-- col-7| Authentication menu -->
+                    <a class="btn btn-primary text-light display-6 text-decoration-none" href="#login">Login</a>
+                    <a class="btn btn-outline-primary display-6 text-decoration-none" href="#register">Register</a>
+                {% endif %}
+            </nav>
+        </div>  
+    </div>    
+
+
+    <!-- SMALLER SCALE DEVICE -->
+    <div class="d-flex flow-column d-md-none my-auto align-items-center">
+        <!-- row 1 -->
+        <h5 class="font-weight-normal">
+            <a class="p-2 text-dark" href="{% url 'home.index' %}">DjWebChatApp</a>
+        </h5>
+
+        <!-- row 3 --> 
+        <div class="d-flex flex-row-reverse flex-grow-1">
+            <nav>
+                {% if request.user.is_authenticated %}
+                <div class="dropdown dropleft show p-2">
+                    <div class="d-flex flex-row">
+                        <!-- col 8 | account-notification -->
+                        <div class="btn-group dropleft mx-2 px-2">
+                            <img class="m-3 bg-mute account-logo rounded-circle m-auto d-block dropdown-toggle" src="{% static 'assets/img/avatar.png' %}" id="profileImage" 
+                            data-toggle="dropdown" aria-haspopup=true aria-expanded=false alt="Profile Images" width="35px" height="35px"/>
+                            <div class="dropdown-menu scrollable-menu" aria-labelledby="profileImage">
+                                <a href="#" class="dropdown-item text-decoration-none">Accounts</a>
+                                <a href="#" class="dropdown-item text-decoration-none">Friends</a>  
+                                <a href="#" class="dropdown-item text-decoration-none">Settings</a>
+                                <a href="#" class="dropdown-item text-decoration-none">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                {% else %}
+                    <!-- col-7| Authentication menu -->
+                    <a class="btn btn-primary text-light display-6 text-decoration-none" href="#login">Login</a>
+                    <a class="btn btn-outline-primary display-6 text-decoration-none" href="#register">Register</a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
 </div>
