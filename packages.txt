@@ -1,12 +1,7 @@
 asgiref==3.5.2
-<<<<<<< HEAD
 backports.zoneinfo==0.2.1
 Django==4.1.2
-psycopg2-binary==2.9.5
-=======
-Django==4.1.1
 Pillow==9.2.0
-psycopg2-binary==2.9.3
->>>>>>> e64f9479de04a9e859d46e3ca17f9425851bef25
+psycopg2-binary==2.9.5
 python-dotenv==0.21.0
 sqlparse==0.4.3
