@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+BAS_URL = "http://127.0.0.1:8000"
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
@@ -40,7 +41,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # FEATURED APPS;
     'apps.home',
-    'apps.accounts',
+    'apps.account',
     # DJANGO APPS;
     'django.contrib.admin',
     'django.contrib.auth',
@@ -72,8 +73,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [ 
-            os.path.join(BASE_DIR, 'templates/views'),              # TEMPLATE DIRECTORIES;
-            os.path.join(BASE_DIR, 'apps'),                         # 
+            os.path.join(BASE_DIR, 'templates'),              # TEMPLATE DIRECTORIES;
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -83,6 +83,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+        # 'libraries' : {
+        #     'staticfiles': 'django.templatetags.static', 
+        # }
         },
     },
 ]
@@ -145,6 +148,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'public'),               # PUBLIC DIRECTORY;
 ]
+
+
+# TEMP DIRECTORY
+TEMP = os.path.join(BASE_DIR, 'public/media/temp')
 
 
 # DEFAULT PRIMARY KEY FIELD TYPE : https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

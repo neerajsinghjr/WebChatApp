@@ -11,11 +11,8 @@ from apps.home.views import HomeRoutes
 home = HomeRoutes()
 
 webRoutes = [
-    
-    path('', home.index, name="home.index")
-    
+    path('', home.index, name="home.index"),
+    path('about', home.about, name="home.about"),
 ]
-
-
 
 urlpatterns = webRoutes

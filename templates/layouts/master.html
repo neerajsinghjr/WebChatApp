@@ -8,16 +8,17 @@
         {% include '../includes/meta.html'%}
 
         <!-- TITLE TAGS -->
-        <title>{% block title %} {% enblock title %} WebChatApp</title>
+        <title>{% block title %} {% endblock title %} WebChatApp</title>
 
         <!-- PRE CSS -->
-        {% include '../includes/pre_css.html' %}
+        {% block pre_css %}  {% endblock pre_css %}
 
         <!-- MAIN CSS -->
         {% include '../includes/main_css.html' %}
 
         <!-- POST CSS -->
-        {% include '../includes/post_css.html'%}
+        {% block post_css %}  {% endblock post_css %}
+        
 
     </head>
 
@@ -28,20 +29,20 @@
                 
         <!-- MAIN BLOCK -->
         <div class="main">
-            {% block content %} {%  endblock content%}
+            {% block content %} {% endblock content%}
         </div>  
 
         <!-- FOOTER -->
         {% include 'includes/footer.html'%}
 
-        <!-- PRE JS -->
-        {% include '../includes/pre_js.html' %}
-
+        <!-- PRE JS  BLOCK -->
+        {% block pre_js %}  {% endblock pre_js %}
+ 
         <!-- MAIN JS -->
         {% include '../includes/main_js.html' %}
 
-        <!-- POST JS -->
-        {% include '../includes/post_js.html'%}
+        <!-- POST JS BLOCK -->
+        {% block post_js %} {% endblock post_js %}
     
     </body>
 
