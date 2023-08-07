@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 
 # APPLICATION;
 INSTALLED_APPS = [
-    # FEATURED APPS;
+    # APPS;
     'apps.home',
     'apps.accounts',
     # DJANGO APPS;
@@ -94,12 +94,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # DATABASE CONFIGURATION : https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': os.getenv('ENGINE'),
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT'),
+        # 'ENGINE': os.getenv('ENGINE'),
+        # 'NAME': os.getenv('DB_NAME'),
+        # 'USER': os.getenv('DB_USER'),
+        # 'PASSWORD': os.getenv('DB_PASSWORD'),
+        # 'HOST': os.getenv('DB_HOST'),
+        # 'PORT': os.getenv('DB_PORT'),
     }
 }
 
@@ -134,7 +140,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # INTERNATIONALIZATION : https://docs.djangoproject.com/en/4.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
+# TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
@@ -149,3 +156,8 @@ STATICFILES_DIRS = [
 
 # DEFAULT PRIMARY KEY FIELD TYPE : https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# CELERT BROKER URL;;
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND")

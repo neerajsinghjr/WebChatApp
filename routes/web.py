@@ -12,10 +12,10 @@ home = HomeRoutes()
 
 webRoutes = [
     
-    path('', home.index, name="home.index")
+    # path('', home.index, name="home.index")
+    path('', home.test, name="home.test")
     
 ]
-
 
 
 urlpatterns = webRoutes
