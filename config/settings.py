@@ -94,12 +94,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # DATABASE CONFIGURATION : https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINE'),
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'),
+        # 'ENGINE': os.getenv('ENGINE'),
+        # 'NAME': os.getenv('NAME'),
+        # 'USER': os.getenv('USER'),
+        # 'PASSWORD': os.getenv('PASSWORD'),
+        # 'HOST': os.getenv('HOST'),
+        # 'PORT': os.getenv('PORT'),
         # 'ENGINE': os.getenv('ENGINE'),
         # 'NAME': os.getenv('DB_NAME'),
         # 'USER': os.getenv('DB_USER'),
