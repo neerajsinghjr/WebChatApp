@@ -1,8 +1,7 @@
 from __future__ import absolute_import
-import os 
+import os
 from celery import Celery
 from .celery_cron import beat_schedule
-
 
 # Render the setting file to django project;;
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
